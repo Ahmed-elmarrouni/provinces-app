@@ -63,4 +63,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Province Management System
+
+This project was developed by **Ahmed El Marrouni**.
+
+- **Email**: [ahmedelmarrouni1@gmail.com](mailto:ahmedelmarrouni1@gmail.com)
+- **LinkedIn**: [Ahmed El Marrouni](https://www.linkedin.com/in/ahmed-el-marrouni-0484a2272/)
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.

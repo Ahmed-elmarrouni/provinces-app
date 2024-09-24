@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
             $table->string('province_name');
-            $table->foreignId('city_id')->constrained()->onDelete("cascade");
+            $table->foreignId('city_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-
-            $table->unique(['province_name', 'city_id']);
         });
     }
 
