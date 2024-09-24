@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    {{-- <link rel="stylesheet" href="{{ asset('fontawesome-free-6.6.0-web/css/all.min.css')}}"> --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome-free-6.6.0-web/css/all.min.css') }}">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('assets/style/main.css') }}">
 

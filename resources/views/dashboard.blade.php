@@ -1,4 +1,6 @@
 <x-app-layout>
+    <link rel="stylesheet" href="{{ asset('fontawesome-free-6.6.0-web/css/all.min.css') }}">
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
@@ -10,52 +12,39 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 {{-- <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
-                </div> --}}
+            </div> --}}
 
-                <div class="table-container ">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search user...">
-                    </div>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox"></th>
-                                <th>Name <span>&#9650;</span></th>
-                                <th>Company</th>
-                                <th>Role</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>Adam Trantow</td>
-                                <td>Mohr, Langworth and Hills</td>
-                                <td>UI Designer</td>
-                                <td>
-                                    <button class="show-btn">Show</button>
-                                    <button class="update-btn">Update</button>
-                                    <button class="delete-btn">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>Angel Rolfson-Kulas</td>
-                                <td>Koch and Sons</td>
-                                <td>UI Designer</td>
-                                <td>
-                                    <button class="show-btn">Show</button>
-                                    <button class="update-btn">Update</button>
-                                    <button class="delete-btn">Delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="table-container ">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search region or city ...">
                 </div>
 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Regions </th>
+                            <th>N° of cities</th>
+                            <th>N° of provinces</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tanger-Tétouan-Al Hoceïma </td>
+                            <td>10</td>
+                            <td>62</td>
+                            <td>
+                                <button class="show-btn">Show&nbsp;&nbsp; <i class="fa-regular fa-eye"></i></button>
+                                <button class="update-btn">Update&nbsp;&nbsp; <i class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="delete-btn">Delete&nbsp;&nbsp; <i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
         </div>
+    </div>
     </div>
 </x-app-layout>
 
