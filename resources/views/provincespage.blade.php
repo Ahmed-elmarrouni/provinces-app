@@ -3,7 +3,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Regions') }}
+            {{ __('Provinces') }}
         </h2>
     </x-slot>
 
@@ -12,28 +12,26 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="table-container">
                     <div class="search-bar">
-                        <input type="text" id="searchInput" placeholder="Search region or city ..." onkeyup="filterRegions()">
+                        <input type="text" id="searchInput" placeholder="Search province..." onkeyup="filterProvinces()">
                     </div>
 
                     <table>
                         <thead>
                             <tr>
-                                <th>Regions</th>
-                                <th>N° of cities</th>
-                                <th>N° of provinces</th>
+                                <th>Provinces name</th>
+                                <th>N° of employees</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="regionsTableBody">
-                            @foreach ($regions as $region)
+                        <tbody id="provincesTable">
+                            @foreach ($provinces as $province)
                             <tr>
-                                <td>{{ $region->region_name }}</td>
-                                <td>{{ $region->cities_count }}</td>
-                                <td>{{ $region->provinces_count }}</td>
+                                <td>{{ $province->province_name }}</td>
+                                <td>{{ $province->employees_count }}</td>
                                 <td>
-                                    <button class="show-btn" data-region-id="{{ $region->id }}">Show&nbsp;&nbsp; <i class="fa-regular fa-eye"></i></button>
+                                    <button class="show-btn" data-province-id="{{ $province->id }}">Show&nbsp;&nbsp; <i class="fa-regular fa-eye"></i></button>
                                     <button class="update-btn">Update&nbsp;&nbsp; <i class="fa-regular fa-pen-to-square"></i></button>
-                                    <button class="delete-btn" data-region-id="{{ $region->id }}">Delete&nbsp;&nbsp;<i class="fa fa-trash"></i></button>
+                                    <button class="delete-btn" data-province-id="{{ $province->id }}">Delete&nbsp;&nbsp;<i class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
                             @endforeach
@@ -51,44 +49,34 @@
 <script>
     document.querySelectorAll('.show-btn').forEach(button => {
         button.addEventListener('click', function() {
-            let regionId = this.getAttribute('data-region-id');
-            window.location.href = `/regions/${regionId}/cities`;
+            let provinceId = this.getAttribute('data-province-id');
+            window.location.href = `/provinces/${provinceId}/employees`;
         });
     });
 
-    function filterRegions() {
+    // Function to filter provinces based on input
+    function filterProvinces() {
         const input = document.getElementById('searchInput');
         const filter = input.value.toLowerCase();
-        const table = document.getElementById('regionsTableBody');
+        const table = document.getElementById('provincesTable');
         const rows = table.getElementsByTagName('tr');
 
         for (let i = 0; i < rows.length; i++) {
-            const cells = rows[i].getElementsByTagName('td');
-            let match = false;
-
-            // Check if the region name or city count matches the input
-            for (let j = 0; j < cells.length; j++) {
-                if (cells[j]) {
-                    const cellText = cells[j].textContent || cells[j].innerText;
-                    if (cellText.toLowerCase().indexOf(filter) > -1) {
-                        match = true;
-                        break;
-                    }
-                }
+            const provinceCell = rows[i].getElementsByTagName('td')[0];
+            if (provinceCell) {
+                const provinceName = provinceCell.textContent || provinceCell.innerText;
+                rows[i].style.display = provinceName.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
             }
-
-            rows[i].style.display = match ? '' : 'none';
         }
     }
 
-
-    // Delete Region
+    // delete func 
     document.querySelectorAll('.delete-btn').forEach(button => {
         button.addEventListener('click', function() {
-            const regionId = this.getAttribute('data-region-id');
+            const provinceId = this.getAttribute('data-province-id');
 
-            if (confirm('Are you sure you want to delete this region?')) {
-                fetch(`/regions/${regionId}`, {
+            if (confirm('Are you sure you want to delete this province?')) {
+                fetch(`/provinces/${provinceId}`, {
                         method: 'DELETE'
                         , headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -97,16 +85,16 @@
                     , })
                     .then(response => {
                         if (response.ok) {
-                            window.location.reload(); // Reload page after delete the regon
+                            window.location.reload(); // Reload the page after successful deletion
                         } else {
                             response.json().then(data => {
-                                alert('Failed to delete region: ' + data.message);
+                                alert('Failed to delete province: ' + data.message);
                             });
                         }
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        alert('Failed to delete region.');
+                        alert('Failed to delete province.');
                     });
             }
         });

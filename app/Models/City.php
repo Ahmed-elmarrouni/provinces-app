@@ -18,4 +18,10 @@ class City extends Model
     {
         return $this->hasMany(Province::class);
     }
+
+
+    public function employees()
+    {
+        return $this->hasManyThrough(Employee::class, Province::class);
+    }
 }

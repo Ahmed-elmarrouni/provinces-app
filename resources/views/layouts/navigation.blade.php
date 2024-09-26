@@ -13,7 +13,16 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Regions') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('cities')" :active="request()->routeIs('cities')">
+                        {{ __('Cities') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('provinces')" :active="request()->routeIs('provinces')">
+                        {{ __('Provinces') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('employees')" :active="request()->routeIs('employees')">
+                        {{ __('Employees') }}
                     </x-nav-link>
                 </div>
             </div>
