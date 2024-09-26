@@ -31,6 +31,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/cities/{city}', [CitiesController::class, 'destroy'])->name('cities.destroy');
     Route::delete('/provinces/{province}', [ProvincesController::class, 'destroy'])->name('provinces.destroy');
     Route::delete('/employees/{employee}', [EmployeesController::class, 'destroy'])->name('employees.destroy');
+
+    // Update Routes
+
+
 });
 
 // Route::get('/dashboard', [RegionController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard'); // This route should be fine

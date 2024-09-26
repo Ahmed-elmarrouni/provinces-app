@@ -9,6 +9,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <button class="add-btn" style="vertical-align:middle"><span>Add New Province </span></button>
+
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="table-container">
                     <div class="search-bar">

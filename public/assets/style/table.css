@@ -64,3 +64,58 @@ button {
 button:hover {
     opacity: 0.8;
 }
+
+/* ADD Button style */
+
+
+.add-btn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #1757eb;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+    width: 25%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 57rem;
+
+}
+
+.add-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.add-btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.add-btn:hover span {
+    padding-right: 25px;
+}
+
+.add-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+
+@media screen and (max-width: 1080px) {
+
+    .add-btn {
+        width: 100%;
+        margin-left: 0rem;
+    }
+}

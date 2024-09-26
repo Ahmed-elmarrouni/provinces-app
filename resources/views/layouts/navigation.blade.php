@@ -76,9 +76,19 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Regions') }}
+            </x-responsive-nav-link>
+             <x-responsive-nav-link :href="route('cities')" :active="request()->routeIs('cities')">
+                {{ __('Cities') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('provinces')" :active="request()->routeIs('provinces')">
+                {{ __('Provinces') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('employees')" :active="request()->routeIs('employees')">
+                {{ __('Employees') }}
             </x-responsive-nav-link>
         </div>
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
