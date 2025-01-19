@@ -106,25 +106,25 @@ This is a Laravel-based CRUD application designed to manage the administrative r
 
 ![Login Page](image-1.png)
 
-### Regions View
+### Register Page
 
-![Regions View](image-2.png)
+![Register Page](image-2.png)
 
-### Cities Management
+### Region Management
 
-![Cities Management](image-3.png)
+![Region Management](image-3.png)
+
+### Cites Management
+
+![Cities Management](image-4.png)
 
 ### Provinces Management
 
-![Provinces Management](image-4.png)
+![Provinces Management](image-5.png)
 
-### Workers Management
+### Workers Page
 
-![Workers Management](image-5.png)
-
-### Authentication Page
-
-![Authentication Page](image-6.png)
+![Workers Management](image-6.png)
 
 ## Folder Structure
 
